@@ -39,72 +39,58 @@ export const Selector = () => {
 
   return (
     <>
-            <div id="booking" class="section">
-                <div class="section-center">
-                    <div class="container" >
-                        <div class="row">
-                            <div class="booking-form">
-                                <div class="form-header">
+            <div id="booking" className="section">
+                <div className="section">
+                    <div className="container" >
+                        <div className="row">
+                            <div className="booking-form">
+                                <div className="form-header">
                                     <h1>Chọn xe ngay thôi</h1>
                                 </div>
                                 <form>
-                                    <div class="form-group">
-                                        <input class="form-control" type="text" placeholder="Địa chỉ"/>
-                                        <span class="form-label">Destination</span>
+                                    <div className="form-group">
+                                        <input className="form-control" type="text" placeholder="Tên xe"/>
+                                        <span className="form-label">Destination</span>
                                     </div>
-                                    <div class="row">
-                                        <div class="col-md-4">
-                                            <div class="form-group">
-                                                <select class="form-control" required>
+                                    
+                                        <div className="col-md-4">
+                                            <div className="form-group">
+                                                <select className="form-control" required>
                                                     <option value="" selected hidden>Loại xe</option>
                                                     <option>4 chỗ</option>
                                                     <option>7 chỗ</option>
                                                     <option>Bán tải</option>
                                                 </select>
-                                            <span class="select-arrow"></span>
-                                            <span class="form-label">Rooms</span>
+                                            <span className="select-arrow"></span>
+                                            <span className="form-label">Rooms</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <select class="form-control" required>
+                                    <div className="col-md-4">
+                                        <div className="form-group">
+                                            <select className="form-control" required>
                                                 <option value="" selected hidden>Hãng xe</option>
                                                 <option>Audi</option>
                                                 <option>Suzuki</option>
                                                 <option>Honda</option>
                                             </select>
-                                            <span class="select-arrow"></span>
-                                            <span class="form-label">Adults</span>
+                                            <span className="select-arrow"></span>
+                                            <span className="form-label">Adults</span>
                                         </div>
                                     </div>
-                                    <div class="col-md-4">
-                                        <div class="form-group">
-                                            <select class="form-control" required>
+                                    <div className="col-md-4">
+                                        <div className="form-group">
+                                            <select className="form-control" required>
                                                 <option value="" selected hidden>Hộp số</option>
                                                 <option>Số sàn</option>
                                                 <option>Số tự động</option>
                                             </select>
-                                            <span class="select-arrow"></span>
-                                            <span class="form-label">Children</span>
+                                            <span className="select-arrow"></span>
+                                            <span className="form-label">Children</span>
                                         </div>
                                     </div>
-                                </div>
-                                <div class="row">
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input class="form-control" type="email" placeholder="Email"/>
-                                            <span class="form-label">Email</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-6">
-                                        <div class="form-group">
-                                            <input class="form-control" type="tel" placeholder="Số điện thoại"/>
-                                            <span class="form-label">Phone</span>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="form-btn">
-                                    <button class="submit-btn">Book Ngay</button>
+                                
+                                <div className="form-btn">
+                                    <button className="submit-btn">Tìm xe</button>
                                 </div>
                             </form>
                         </div>
