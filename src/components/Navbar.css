@@ -1,24 +1,23 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap");
-
 li,
 .nav__items,
 button {
   font-family: "Montserrat", sans-serif;
   font-weight: 500;
   font-size: 16px;
-  color: #fff;
+  color: #000;
   text-decoration: none !important;
 }
 
-.header1 {
-  background-color: #fff;
+.header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   padding: 15px 10%;
+  background-color: #fff;
 }
 
-.header1 .logo {
+.header .logo {
   width: 200px;
   cursor: pointer;
 }

@@ -27,12 +27,10 @@ function Login() {
             body: JSON.stringify(item)
             
         });
-        console.warn(item);
-        console.warn(JSON.stringify(item));
-        result = await result.json();
-        console.warn("result", result);
-        localStorage.setItem("user-info",JSON.stringify(result));
-        history.push("/");
+            result = await result.json();
+            localStorage.setItem("user-info",JSON.stringify(result));
+            history.push("/");
+       
     }
 
     return(

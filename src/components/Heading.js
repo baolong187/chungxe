@@ -1,30 +1,56 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
+import {Link, useHistory} from 'react-router-dom';
 
 import './Navbar.css';
 
 import {
     Navbar,
     Nav,
-    Container
+    Container,
+    NavDropdown
 }from 'react-bootstrap';
 
+
 export const Heading = () => {
+    const history = useHistory();
+
+    const user = JSON.parse(localStorage.getItem('user-info'));
+
+    function logout() {
+        localStorage.clear();
+        history.push('/');
+    }
     return(
-    <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Container>
-            <Navbar.Brand href="/"><img src="https://xego.vn/assets/images/XEGO-logo.svg" style={{width:'100px', height: 'auto'}}/></Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-               <ul className="nav__links">
-                    <li><Link to="/" className="nav__items">Trang chủ</Link></li>
-                    <li><Link to="/book" className="nav__items">Đặt xe</Link></li>
-                    <li><Link to="/" className="nav__items">Về chúng tôi</Link></li>
-                </ul>
-               
-                </Navbar.Collapse>
-                <a href="/login" className="cta"><button>Đăng nhập</button></a>
-        </Container>
-    </Navbar> 
+            <header className="header">
+                <img className="logo" src="https://chungxe.vn/assets/images/logo.svg" alt="logo"/>
+                <nav>   
+                        {
+                            localStorage.getItem('user-info') ?
+                            <>
+                            <ul className="nav__links">
+                                <li><Link className="nav__items" href to="/">Trang chủ</Link></li>
+                                <li><Link className="nav__items" href to="/">Về chúng tôi</Link></li>
+                                 <li><Link className="nav__items" href to="/book">Đặt xe</Link></li>
+                                <li>
+                                    <NavDropdown title={user.username}>
+                                        <NavDropdown.Item onClick={logout} >
+                                            Logout
+                                        </NavDropdown.Item>
+                                    </NavDropdown>
+                                </li>
+                            </ul>
+                            </>
+                            :
+                            <>
+                            <ul className="nav__links">
+                                <li><Link className="nav__items" href to="/">Trang chủ</Link></li>
+                                <li><Link className="nav__items" href to="/">Về chúng tôi</Link></li>
+                                <Link href to ="/login" className="cta"><button>Đăng nhập</button></Link>
+                            </ul>
+                            </>
+                           
+                        }
+                </nav>
+            </header>
     )
 }
